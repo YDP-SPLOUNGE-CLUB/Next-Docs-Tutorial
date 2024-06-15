@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background: wheat;
+  padding: 0 14px;
+
+  align-items: center;
+
+  .left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .homeButton {
+    font-size: 14px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 12px;
+
+    padding: 12px;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
