@@ -1,5 +1,5 @@
 import type {Metadata} from "next";
-import Header from "@/component/JKS/Header/Header";
+import Header from "@/component/JKS/layout/Header/Header";
 
 export const metadata: Metadata = {
   title: "Home Route",

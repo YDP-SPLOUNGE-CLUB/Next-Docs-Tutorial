@@ -3,8 +3,8 @@
 import React from 'react';
 import style from '@/common/style/jks/index.module.scss';
 import Image from "next/image";
-import StepNavigation from "@/component/JKS/StepNavigation/StepNavigation";
-import CodeSnippet from "@/component/JKS/CodeSnippet/CodeSnippet";
+import StepNavigation from "@/component/JKS/layout/StepNavigation/StepNavigation";
+import CodeSnippet from "@/component/JKS/misc/CodeSnippet/CodeSnippet";
 
 const RouteIndexPage = () => {
 
