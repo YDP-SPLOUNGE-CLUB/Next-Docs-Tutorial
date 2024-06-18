@@ -17,7 +17,7 @@ export default function HomePage() {
 
       <div className={style.list}>
         <ul> 1장
-          <li onClick={() => onClickRouter('routing')}> - Defining Route </li>
+          <li onClick={() => onClickRouter('defining-routes')}> - Defining Route </li>
           <li> - Pages and Layouts</li>
           <li> - Linking and Navigating</li>
           <li> - Loading UI and Streaming</li>
