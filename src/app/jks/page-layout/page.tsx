@@ -6,6 +6,7 @@ import Image from "next/image";
 import CodeSnippet from "@/component/JKS/misc/CodeSnippet/CodeSnippet";
 import StepNavigation from "@/component/JKS/layout/StepNavigation/StepNavigation";
 import PageComponent from "@/component/JKS/misc/PageComponent/PageLayout/PageComponent";
+import LayoutComponent from "@/component/JKS/misc/PageComponent/LayoutComponent/LayoutComponent";
 
 export default function PageLayout() {
 
@@ -25,7 +26,11 @@ export default function PageLayout() {
 
   return (
     <div className={style.page}>
-      <PageComponent/>
+      <PageComponent />
+      <div>
+        <div className={style.emptyLine} />
+      </div>
+      <LayoutComponent />
       <StepNavigation nextPage={{name: 'Linking and Navigating', route: 'page-layout'}}/>
     </div>
   )
