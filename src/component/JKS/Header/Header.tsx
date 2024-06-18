@@ -2,18 +2,20 @@
 
 import React from 'react';
 import style from './Header.module.scss';
-import {usePathname} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 
 const Header = () => {
   const pathName = usePathname();
-  const headerTitle = pathName.substring(4);
-  console.log(headerTitle)
+  const router = useRouter();
+  const headerTitle = pathName.substring(5);
 
   return (
     <div className={style.header}>
       <div className={style.left}>
-        <div className={style.homeButton}>홈으로</div>
-        <p>현재 위치 {pathName}</p>
+        <div className={style.homeButton}
+          onClick={() => router.push('/jks/home')}
+        >홈으로</div>
+        <p>현재 위치 {headerTitle}</p>
       </div>
     </div>
   )
