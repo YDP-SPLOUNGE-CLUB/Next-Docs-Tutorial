@@ -8,6 +8,7 @@ import StepNavigation from "@/component/JKS/layout/StepNavigation/StepNavigation
 import PageComponent from "@/component/JKS/misc/PageComponent/PageComponent/PageComponent";
 import LayoutComponent from "@/component/JKS/misc/PageComponent/LayoutComponent/LayoutComponent";
 import TemplateComponent from "@/component/JKS/misc/PageComponent/TemplateComponent/TemplateComponent";
+import MetaDataComponent from "@/component/JKS/misc/PageComponent/MetaDataComponent/MetaDataComponent";
 
 export default function PageLayout() {
 
@@ -36,6 +37,10 @@ export default function PageLayout() {
         <div className={style.emptyLine}/>
       </div>
       <TemplateComponent/>
+      <div>
+        <div className={style.emptyLine}/>
+      </div>
+      <MetaDataComponent/>
       <StepNavigation nextPage={{name: 'Linking and Navigating', route: 'page-layout'}}/>
     </div>
   )
