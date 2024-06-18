@@ -1,9 +1,23 @@
+'use client';
+
 import React from 'react';
-import style from './routing.module.scss';
+import style from '@/common/style/jks/index.module.scss';
 import Image from "next/image";
 import StepNavigation from "@/component/JKS/StepNavigation/StepNavigation";
+import CodeSnippet from "@/component/JKS/CodeSnippet/CodeSnippet";
 
 const RouteIndexPage = () => {
+
+  const code = `
+    export default function Page() {
+      return (
+        <div>
+          {....}
+        </div>
+      );
+    }
+  `;
+
   return (
     <div className={style.page}>
       <div className={style.header}>
@@ -55,7 +69,10 @@ const RouteIndexPage = () => {
           </div>
         </div>
       </div>
-      <StepNavigation nextPage={{name: 'Page and Layouts', route: ''}}/>
+      <div style={{height: 500}}>
+        <CodeSnippet codeString={code}/>
+      </div>
+      <StepNavigation nextPage={{name: 'Page and Layouts', route: 'page-layout'}}/>
     </div>
   )
 }
