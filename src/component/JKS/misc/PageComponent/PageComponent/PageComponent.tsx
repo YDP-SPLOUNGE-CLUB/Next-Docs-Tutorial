@@ -20,9 +20,6 @@ const PageComponent = () => {
 
   return (
     <>
-      <div className={style.header}>
-        <h1>Pages and Layouts</h1>
-      </div>
       <div className={style.content}>
         <p>App 디렉터리에는 layout.js, page.js 과 template.js 를 사용하여 경로에 대한 UI 작성이 가능합니다.</p>
         <div className={style.emptyLine}></div>

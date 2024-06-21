@@ -6,7 +6,7 @@ import Image from "next/image";
 import StepNavigation from "@/component/JKS/layout/StepNavigation/StepNavigation";
 import CodeSnippet from "@/component/JKS/misc/CodeSnippet/CodeSnippet";
 
-const RouteIndexPage = () => {
+export default function RouteIndexPage() {
 
   const code = `
     export default function Page() {
@@ -76,5 +76,3 @@ const RouteIndexPage = () => {
     </div>
   )
 }
-
-export default RouteIndexPage
