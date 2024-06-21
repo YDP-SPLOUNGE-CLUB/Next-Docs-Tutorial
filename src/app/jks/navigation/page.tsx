@@ -6,6 +6,7 @@ import UseRouterComponent from "@/component/JKS/misc/PageComponent/UseRouterComp
 import RedirectComponent from "@/component/JKS/misc/PageComponent/RedirectComponent/RedirectComponent";
 import StepNavigation from "@/component/JKS/layout/StepNavigation/StepNavigation";
 import NativeHistoryComponent from "@/component/JKS/misc/PageComponent/NativeHistoryComponent/NativeHistoryComponent";
+import HowWorkRouteComponent from "@/component/JKS/misc/PageComponent/HowWorkRouteComponent/HowWorkRouteComponent";
 
 export default function NavigationPage() {
 
@@ -41,6 +42,7 @@ export default function NavigationPage() {
       <div>
         <div className={style.emptyLine}/>
       </div>
+      <HowWorkRouteComponent />
       <StepNavigation
         prevPage={{name: 'Linking and Navigating', route: 'navigation'}}
       />

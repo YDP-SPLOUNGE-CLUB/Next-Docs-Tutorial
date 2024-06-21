@@ -1,6 +1,7 @@
 'use client';
 import style from './home.module.scss';
 import {useRouter} from "next/navigation";
+import Link from "next/link";
 
 export default function HomePage() {
   const router = useRouter();
@@ -17,10 +18,9 @@ export default function HomePage() {
 
       <div className={style.list}>
         <ul> 1장
-          <li onClick={() => onClickRouter('defining-routes')}> - Defining Route </li>
-          <li> - Pages and Layouts</li>
-          <li> - Linking and Navigating</li>
-          <li> - Loading UI and Streaming</li>
+          <li><Link href={'defining-routes'}>- Defining Route </Link></li>
+          <li><Link href={'page-layout'}>- Pages and Layouts </Link></li>
+          <li><Link href={'navigation'}>- Linking and Navigating </Link></li>
         </ul>
       </div>
     </div>

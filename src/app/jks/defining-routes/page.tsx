@@ -69,9 +69,7 @@ export default function RouteIndexPage() {
           </div>
         </div>
       </div>
-      <div style={{height: 500}}>
-        <CodeSnippet codeString={code}/>
-      </div>
+      <CodeSnippet codeString={code}/>
       <StepNavigation nextPage={{name: 'Page and Layouts', route: 'page-layout'}}/>
     </div>
   )
