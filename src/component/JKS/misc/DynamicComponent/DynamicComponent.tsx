@@ -1,30 +1,45 @@
 // src/components/DynamicComponent.tsx
 'use client'
 
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
+import {useQuery, UseQueryOptions, UseQueryResult} from "@tanstack/react-query";
 
-const DynamicComponent: React.FC = () => {
-  const [data, setData] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+interface Props {
+  delayTime: number;
+}
 
-  useEffect(() => {
-    // Simulate an API call
-    const fetchData = async () => {
-      setLoading(true);
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
-      const result = await response.json();
-      setData(result.title);
-      setLoading(false);
-    };
+type ExtendedQueryOptions<TQueryFnData = unknown, TError = unknown, TData = TQueryFnData> =
+  UseQueryOptions<TQueryFnData, TError, TData>
+  & {
+  suspense?: boolean;
+};
 
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return null; // 데이터가 로드되지 않은 상태에서 null 반환
+const fetchPost = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
   }
+  return response.json();
+};
 
-  return <div>{data}</div>;
+const DynamicComponent = ({delayTime}: Props) => {
+  const {data, error, isLoading} = useQuery({
+    queryKey: ['post', delayTime],
+    queryFn: () =>
+      new Promise((resolve) => {
+        setTimeout(async () => {
+          const result = await fetchPost();
+          resolve(result);
+        }, delayTime);
+      }),
+    suspense: true,
+  } as ExtendedQueryOptions);
+
+  if (error) return <div>Failed to load</div>;
+  if (isLoading) return null;
+  if (!data) return null;
+
+  return <div>{(data as any)?.title}</div>;
 };
 
 export default DynamicComponent;

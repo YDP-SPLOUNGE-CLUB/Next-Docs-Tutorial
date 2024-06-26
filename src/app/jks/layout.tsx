@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import Header from "@/component/JKS/layout/Header/Header";
+import {Providers} from "@/common/provider/provider";
 
 export const metadata: Metadata = {
   title: "Home Route",
@@ -12,8 +13,10 @@ export default function RootLayout({
 }>) {
   return (
     <div>
-      <Header />
-      {children}
+      <Providers>
+        <Header/>
+        {children}
+      </Providers>
     </div>
   );
 }
