@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { delay } from '@/utils/common';
-import Delay from '../../../../../components/lhs/Delay';
 import { Suspense } from 'react';
+import Delay from '@/components/lhs/Delay';
 
 export default async function LoadingUIAndStreamingPage() {
   const randomName = faker.person.fullName(); // Rowan Nikolaus

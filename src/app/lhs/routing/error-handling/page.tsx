@@ -1,4 +1,4 @@
-import ErrorButton from '../../../../../components/lhs/ErrorButton';
+import ErrorButton from '@/components/lhs/ErrorButton';
 
 export default function ErrorHandlingPage() {
   return (
