@@ -33,6 +33,8 @@ const DynamicComponent = ({delayTime}: Props) => {
         }, delayTime);
       }),
     suspense: true,
+    staleTime: 0,
+    gcTime: 0
   } as ExtendedQueryOptions);
 
   if (error) return <div>Failed to load</div>;
