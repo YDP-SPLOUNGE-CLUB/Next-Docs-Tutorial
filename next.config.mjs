@@ -9,7 +9,7 @@ const nextConfig = {
       {
         source: '/jks/redirect/old-path',
         destination: '/jks/redirect/new-path',
-        permanent: true, // permanentRedirect
+        permanent: false, // permanentRedirect
       },
     ]
   },
