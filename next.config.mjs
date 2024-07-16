@@ -4,15 +4,20 @@ const nextConfig = {
     domains: ['nextjs.org'],
   },
   reactStrictMode: true,
-  async redirects() {
+  redirects() {
     return [
+      {
+        source: '/lhs/routing/redirecting/old',
+        destination: '/lhs/routing/redirecting/new',
+        permanent: true,
+      },
       {
         source: '/jks/redirect/old-path',
         destination: '/jks/redirect/new-path',
         permanent: false, // permanentRedirect
       },
     ]
-  },
+  }
 };
 
 export default nextConfig;

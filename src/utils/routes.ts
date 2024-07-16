@@ -10,8 +10,7 @@ export function getRoutes(dir: string, baseUrl = '') {
     const stat = fs.statSync(fullPath);
 
     if (stat.isDirectory()) {
-      const extraRoutes = getRoutes(fullPath, path.join(baseUrl, file))
-      routes.push(...extraRoutes);
+      routes.push(file);
     } else {
       if (/page.(ts|tsx)/g.test(file)) {
         routes.push(baseUrl);
