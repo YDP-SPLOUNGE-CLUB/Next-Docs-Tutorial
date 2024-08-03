@@ -3,7 +3,7 @@ import CodeSnippet from "@/component/JKS/misc/CodeSnippet/CodeSnippet";
 async function getData() {
   console.log('Fetching data from API...');
   const res = await fetch('https://jsonplaceholder.typicode.com/posts/1', {
-    cache: 'force-cache',
+    cache: 'no-store',
   });
   if (!res.ok) {
     throw new Error('Failed to fetch data');
